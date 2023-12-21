@@ -1,0 +1,184 @@
+---
+title: "Mode opératoire Github"
+author: Franck Lequesne
+date: last-modified
+toc: true
+format:
+  html:
+    embed-resources: true
+---
+
+# Git, Git Desktop et Git Bash
+
+![](Image%20intro.PNG){width="201"}
+
+## Installation et premières commandes
+
+1.  **Installation**
+
+    -   Installer **Git** (https://git-scm.com/downloads par exemple).
+
+        -   Git permettra notamment d'installer une invite de commande (**Git Bash**)
+            -   Remarque : plus tard, nous verrons aussi que RStudio proposera une invite de commande
+
+    -   Installer **GitHub Desktop** (https://desktop.github.com/)
+
+        -   Application "graphique" qui offre une interface utilisateur conviviale pour travailler avec Git
+
+    -   S'inscrire sur **github.com** (service web d'hébergement qui utilise le logiciel de versions Git).
+
+2.  **Quelques commandes de base pour travailler avec la console Git Bash**
+
+    -   \$ **pwd** : permet de connaître le répertoire de travail actuel
+
+    -   \$ **mkdir** Y permet de créer un répertoire Y
+
+    -   \$ **touch** Z.txt permet de créer un fichier Z.txt
+
+    -   \$ **ls** liste tous les fichiers du dossier
+
+    -   \$ **cd ..** permet de remonter d'un niveau dans la hiérarchie du répertoire
+
+3.  **La configuration de Git avec Git Bash**
+
+    -   \$ git config \-- global \--list affiche la configuration Git
+
+        ![](Image%20git%20config%20--global%20--list.PNG){width="383"}
+
+    -   \$ git config \--global user.email mario.bros\@agriculture.gouv.fr (pas besoin de guillemet)
+
+    -   \$ git config \--global user.name "Mario Bros"
+
+4.  **La configuration de Git avec GitHub Desktop**
+
+    GitHub Desktop permet de définir le nom et l'adresse e-mail que l'on souhaite associer aux commits que nous effectuons dans nos dépôts. Si le nom et l'adresse ont déjà ont été définis dans la configuration Git de l'ordinateur, GitHub Desktop les détecte et utilise ces valeurs.
+
+-   A partir du menu Files/Options :
+
+![](Image%20configuration%20de%20git%20avec%20git%20desktop.PNG){width="356"}
+
+5.  **Cheat sheet GitHub (en français)**
+
+![](main_git-cheat-sheet-github-french.pdf){width="25cm" height="50cm"}
+
+# RStudio et Git
+
+1.  **RStudio et Git**
+
+-   **Connexion RStudio et Git**
+
+    -   Dans Tools-Global Options-Git/SVN, il faut indiquer dans "Git executable" où se trouve Git
+
+    -   Il faut aussi indiquer la clé SSH (on peut créer une clé SSH depuis RStudio avec "create RSA Key")
+
+        ![](Image%20Tools_Global_options_GITSVN.PNG){width="439"}
+
+        -   Remarque: pour récupérer la clé SSH créée sur GitHub, cliquer sur l'avatar en haut à droite:
+
+            ![](Image%20SSH%20Key%20Github.PNG){width="234"}
+
+    -   Il faut enfin déclarer son identité:
+
+        -   dans le terminal RStudio (raccourci clavier, au cas où : Alt + Maj + r) avec les deux lignes de commande : *git config \--global user.email "mario.bros\@agriculture.gouv.fr"* et *git config \--global user.name "Mario Bros"*
+
+            ![](Image%20console.PNG){width="428"}
+
+        -   Déclarer le proxy dans Git :
+
+            -   Dans le terminal RStudio saisir cette première commande : *git config \--global http.proxy [http://rie.proxy.national.agri:8080](http://rie.proxy.national.agri:8080/)* puis celle-ci: *git config \--global https.proxy [https://rie.proxy.national.agri:8080](https://rie.proxy.national.agri:8080/)*
+
+                -   Remarques :
+
+                    -   cette déclaration de proxy fonctionne aussi bien en bureau qu'en télétravail.
+
+                    -   pour vérifier les paramètres, on peut toujours reprendre la commande du point 3. *: git config \-- global \--list qui affichera la configuration Git*
+
+# Initialisation d'un projet R avec Git
+
+## A partir de GitHub.com
+
+-   Sur la page d'accueil, dans le "menu hamburger", créer un nouveau projet (repository) :
+
+    ![](Image%20Hamburger.PNG){width="196"}
+
+![](Image_new_repository_github.PNG){width="522"}
+
+-   Remarques :
+
+    -   Pour le nom du repository, il faut apparemment éviter les majuscules, les espaces, les points et le nom du repository ne doit pas commencer par un chiffre.
+
+    -   Dans l'idéal, ce nom doit correspondre au nom du projet R ou futur projet R (c'est déjà assez compliqué comme ça, non? ) ![](Image_emoji_reflexion.PNG){width="30"}
+
+    -   Pour détruire un repository sous GitHub, il faut aller dans le menu Settings et en bas de page, choisir "Delete this repository"
+
+        ![](Image%20remove%20repository.PNG){width="498"}
+
+-   Sur GitHub, on doit obtenir quelque chose comme ça:
+
+    ![](Image_le%20nouveau%20repository.PNG){width="234"}
+
+-   Maintenant, on doit cloner ce repository sur Rstudio:
+
+    -   Sur GitHub.com / Code, dans le repository créé, il faut recopier le protocole HTTPS (ou SSH) :
+
+        ![](Image_protocole_https%20ou%20SSH%20dans%20github.PNG){width="657"}
+
+    -   Dans RStudio, sous File - New Project - Version Control - Git, recopier le protocole dans le "Repository URL", le cas échéant, choisir le répertoire qui contiendra le projet dans l'ordinateur
+
+    ![](Image%20Rstudio_git%20version%20control.PNG){width="381"}
+
+Dans RStudio, on doit obtenir ce genre d'image :
+
+![](Image%20clonage%20sur%20Rstudio.PNG){width="342"}
+
+Désormais, toutes les modifications réalisées dans le projet, sous RStudio sont "repérées" par le "Git":
+
+![](Image%20Git%20Rstudio.PNG){width="232"}
+
+Ici, on a ajouté un fichier PgmR.R qui n'existait pas à l'initialisation du projet.
+
+On peut "commiter" ce fichier :
+
+![](Image%20Git%20Commit%20Rstudio.PNG){width="213"}
+
+![](Image%20Git%20Commit%202%20Rstudio.PNG){width="526"}
+
+![](Image%20Git%20Commit%203%20Rstudio.PNG){width="446"}
+
+Maintenant que nous avons fait un petit travail en local, il est temps de "pusher" notre premier "commit" sur GitHub.
+
+![](Image_Rstudio_push.PNG){width="533"}
+
+Une fenêtre va proposer une connexion à GitHub :
+
+![](Image%20signature%20github%20Rstudio.PNG){width="360"}
+
+![](Image%20signature%202%20github%20Rstudio.PNG){width="437"}
+
+Ce nouveau fichier est désormais disponible sur GitHub :
+
+![](Image%20Github%20resultat%20apres%20push.PNG)
+
+## Et si le projet R existait avant la création du repository dans GitHub?
+
+-   Installation et chargement du package "usethis"
+
+-   Dans la console, il faut exécuter l'instruction : usethis::use_git()
+
+    ![](Image_si_ProjetR%20existe%20deja.PNG)
+
+Sur GitHub, créer un nouveau repository, copier le code HTTPS.
+
+Il suffit maintenant de relier ce projet à Git. Dans RStudio, sur le terminal Git, saisir :
+
+git remote add origin https://github.com/...git
+
+et
+
+git push -u origin master
+
+Vous devez obtenir dans la fenêtre Terminal, ce genre de message :
+
+![](Image%20relier%20le%20projetR%20a%20git_fin.PNG)
+
+Remarque: attention, cette phase peut être assez longue... ![](Image_emoji_dodo.PNG){width="31"}
