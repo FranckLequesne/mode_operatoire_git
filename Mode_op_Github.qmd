@@ -6,6 +6,7 @@ toc: true
 format:
   html:
     embed-resources: true
+     theme: cosmo
 ---
 
 # Git, Git Desktop et Git Bash
