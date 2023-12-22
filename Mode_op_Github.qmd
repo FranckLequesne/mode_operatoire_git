@@ -63,8 +63,6 @@ format:
 
 # RStudio et Git
 
-1.  **RStudio et Git**
-
 -   **Connexion RStudio et Git**
 
     -   Dans Tools-Global Options-Git/SVN, il faut indiquer dans "Git executable" où se trouve Git
@@ -97,7 +95,7 @@ format:
 
 ## A partir de GitHub.com
 
--   Sur la page d'accueil, dans le "menu hamburger", créer un nouveau projet (repository) :
+-   Sur la page d'accueil, dans le "**menu hamburger**", créer un nouveau projet (repository) :
 
     ![](Image%20Hamburger.PNG){width="196"}
 
@@ -105,11 +103,11 @@ format:
 
 -   Remarques :
 
-    -   Pour le nom du repository, il faut apparemment éviter les majuscules, les espaces, les points et le nom du repository ne doit pas commencer par un chiffre.
+    -   Pour le nom du repository, il faut apparemment éviter les **majuscules, les espaces, les points** et le nom du repository **ne doit pas commencer par un chiffre**.
 
     -   Dans l'idéal, ce nom doit correspondre au nom du projet R ou futur projet R (c'est déjà assez compliqué comme ça, non? ) ![](Image_emoji_reflexion.PNG){width="30"}
 
-    -   Pour détruire un repository sous GitHub, il faut aller dans le menu Settings et en bas de page, choisir "Delete this repository"
+    -   Pour détruire un repository sous GitHub, il faut aller dans le menu **Settings** et en bas de page, choisir "**Delete this repository**"
 
         ![](Image%20remove%20repository.PNG){width="498"}
 
@@ -117,13 +115,13 @@ format:
 
     ![](Image_le%20nouveau%20repository.PNG){width="234"}
 
--   Maintenant, on doit cloner ce repository sur Rstudio:
+-   Maintenant, on doit **cloner ce repository sur Rstudio**:
 
-    -   Sur GitHub.com / Code, dans le repository créé, il faut recopier le protocole HTTPS (ou SSH) :
+    -   Sur **GitHub / Code**, dans le repository créé, il faut recopier le protocole HTTPS (ou SSH) :
 
         ![](Image_protocole_https%20ou%20SSH%20dans%20github.PNG){width="657"}
 
-    -   Dans RStudio, sous File - New Project - Version Control - Git, recopier le protocole dans le "Repository URL", le cas échéant, choisir le répertoire qui contiendra le projet dans l'ordinateur
+    -   Dans RStudio, sous **File - New Project - Version Control - Git**, recopier le protocole dans le "Repository URL", le cas échéant, choisir le répertoire qui contiendra le projet dans l'ordinateur
 
     ![](Image%20Rstudio_git%20version%20control.PNG){width="381"}
 
@@ -137,7 +135,7 @@ Désormais, toutes les modifications réalisées dans le projet, sous RStudio so
 
 Ici, on a ajouté un fichier PgmR.R qui n'existait pas à l'initialisation du projet.
 
-On peut "commiter" ce fichier :
+On peut **"commiter"** ce fichier :
 
 ![](Image%20Git%20Commit%20Rstudio.PNG){width="213"}
 
@@ -145,7 +143,7 @@ On peut "commiter" ce fichier :
 
 ![](Image%20Git%20Commit%203%20Rstudio.PNG){width="446"}
 
-Maintenant que nous avons fait un petit travail en local, il est temps de "pusher" notre premier "commit" sur GitHub.
+Maintenant que nous avons fait un petit travail en local, il est temps de **"pusher" notre premier "commit"** sur GitHub.
 
 ![](Image_Rstudio_push.PNG){width="533"}
 
@@ -161,7 +159,9 @@ Ce nouveau fichier est désormais disponible sur GitHub :
 
 ## Et si le projet R existait avant la création du repository dans GitHub?
 
--   Installation et chargement du package "usethis"
+Il est apparemment recommandé d'utiliser Git dès la création d'un projet RStudio. Mais il est possible de commencer à utiliser Git d'un projet RStudio déjà existant:
+
+-   Installation et chargement du package "**usethis**"
 
 -   Dans la console, il faut exécuter l'instruction : usethis::use_git()
 
@@ -169,16 +169,48 @@ Ce nouveau fichier est désormais disponible sur GitHub :
 
 Sur GitHub, créer un nouveau repository, copier le code HTTPS.
 
-Il suffit maintenant de relier ce projet à Git. Dans RStudio, sur le terminal Git, saisir :
+Il suffit maintenant de **relier ce projet à Git**. Dans RStudio, sur le terminal Git, saisir :
 
-git remote add origin https://github.com/...git
+*git remote add origin https://github.com/...git*
 
 et
 
-git push -u origin master
+*git push -u origin master*
 
 Vous devez obtenir dans la fenêtre Terminal, ce genre de message :
 
 ![](Image%20relier%20le%20projetR%20a%20git_fin.PNG)
 
 Remarque: attention, cette phase peut être assez longue... ![](Image_emoji_dodo.PNG){width="31"}
+
+## L'utilisation de .gitignore
+
+RStudio a créé un fichier .gitignore au moment de l'initialisation. Certains fichiers peuvent être exclus du suivi des modifications, comme des fichiers de données (csv, xls, txt...) ou des fichiers de sortie (pdf, html...) par exemple.
+
+Il suffit d'ouvrir le fichier .gitignore et d'ajouter le type de fichier à exclure, par exemple ici, on exclut les fichiers en csv, html:
+
+![](Image_gitignore.PNG)
+
+Remarque: autre solution, l'onglet Git/More/Ignore propose drectement une interface graphique pour mettre à jour ce fichier
+
+## Comment repérer les modifications apportées au projet ?
+
+Dans l'onglet Git, des petites icônes colorées sont positionnées à gauche du nom des fichiers
+
+![](Image_icones.PNG){width="251"}
+
+![](Image J.PNG)
+
+Les modifications apportées à ce fichier n'ont pas encore été prises en compte par Git
+
+![](Image M.PNG)
+
+Les modifications apportées à ce fichier ont été prises en compte par Git
+
+![](Image D.PNG)
+
+Les modifications de ce fichier sont suivies par Git et le fichier a été supprimé (ou éventuellement renommé) depuis la dernière fois que ses modifications ont été sauvegardées dans l\'historique de Git
+
+![](Image A.PNG)
+
+Un nouveau fichier est ajouté à l'historique de Git (après un push)
