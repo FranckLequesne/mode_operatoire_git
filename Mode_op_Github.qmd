@@ -121,7 +121,7 @@ format:
 
         ![](Image_protocole_https%20ou%20SSH%20dans%20github.PNG){width="657"}
 
-    -   Dans RStudio, sous **File - New Project - Version Control - Git**, recopier le protocole dans le "Repository URL", le cas échéant, choisir le répertoire qui contiendra le projet dans l'ordinateur
+        -   Dans RStudio, sous **File - New Project - Version Control - Git**, recopier le protocole dans le "Repository URL", le cas échéant, choisir le répertoire qui contiendra le projet dans l'ordinateur. Project_directory_name est par défaut le nom du .git
 
     ![](Image%20Rstudio_git%20version%20control.PNG){width="381"}
 
@@ -199,18 +199,18 @@ Dans l'onglet Git, des petites icônes colorées sont positionnées à gauche du
 
 ![](Image_icones.PNG){width="251"}
 
-![](Image J.PNG)
+![](Image%20J.PNG)
 
 Les modifications apportées à ce fichier n'ont pas encore été prises en compte par Git
 
-![](Image M.PNG)
+![](Image%20M.PNG)
 
 Les modifications apportées à ce fichier ont été prises en compte par Git
 
-![](Image D.PNG)
+![](Image%20D.PNG)
 
-Les modifications de ce fichier sont suivies par Git et le fichier a été supprimé (ou éventuellement renommé) depuis la dernière fois que ses modifications ont été sauvegardées dans l\'historique de Git
+Les modifications de ce fichier sont suivies par Git et le fichier a été supprimé (ou éventuellement renommé) depuis la dernière fois que ses modifications ont été sauvegardées dans l'historique de Git
 
-![](Image A.PNG)
+![](Image%20A.PNG)
 
 Un nouveau fichier est ajouté à l'historique de Git (après un push)
