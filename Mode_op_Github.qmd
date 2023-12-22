@@ -76,7 +76,7 @@ format:
 
             ![](Image%20SSH%20Key%20Github.PNG){width="234"}
 
-    -   Il faut enfin déclarer son identité:
+    -   Il faut enfin déclarer son identité ![](Image_police.jpg){width="72"}
 
         -   dans le terminal RStudio (raccourci clavier, au cas où : Alt + Maj + r) avec les deux lignes de commande : *git config \--global user.email "mario.bros\@agriculture.gouv.fr"* et *git config \--global user.name "Mario Bros"*
 
