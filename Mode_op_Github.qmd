@@ -64,7 +64,7 @@ format:
 
 # RStudio et Git
 
--   **Connexion RStudio et Git**
+-   **Connexion entre RStudio et Git**
 
     -   Dans Tools-Global Options-Git/SVN, il faut indiquer dans "Git executable" où se trouve Git
 
