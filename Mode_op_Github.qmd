@@ -187,7 +187,7 @@ Remarque: attention, cette phase peut être assez longue... ![](Image_emoji_dodo
 
 RStudio a créé un fichier .gitignore au moment de l'initialisation. Certains fichiers peuvent être exclus du suivi des modifications, comme des fichiers de données (csv, xls, txt...) ou des fichiers de sortie (pdf, html...) par exemple.
 
-Il suffit d'ouvrir le fichier .gitignore et d'ajouter le type de fichier à exclure, par exemple ici, on exclut les fichiers en csv, html:
+Il suffit d'ouvrir le fichier .gitignore et d'ajouter le type de fichier qui est à exclure, par exemple ici, on exclut les fichiers en csv, html:
 
 ![](Image_gitignore.PNG)
 
