@@ -121,7 +121,7 @@ format:
 
         ![](Image_protocole_https%20ou%20SSH%20dans%20github.PNG){width="657"}
 
-    -   Dans RStudio, sous **File - New Project - Version Control - Git**, recopier le protocole dans le "Repository URL", le cas échéant, choisir le répertoire qui contiendra le projet dans l'ordinateur
+    -   Dans RStudio, sous **File - New Project - Version Control - Git**, recopier le protocole dans le "Repository URL", le cas échéant, choisir le répertoire qui contiendra le projet dans l'ordinateur. Par défaut, Create_project_name correspond au nom du fichier .git
 
     ![](Image%20Rstudio_git%20version%20control.PNG){width="381"}
 
